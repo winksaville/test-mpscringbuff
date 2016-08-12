@@ -77,7 +77,7 @@ uint64_t deinitMpscRingBuff(MpscRingBuff_t* pRb) {
   pRb->mask = 0;
   pRb->count = 0;
   pRb->msgs_processed = 0;
-  DPF(LDR "deinitMpscRingBuff:-pRb=%p\n", ldr(), pRb);
+  DPF(LDR "deinitMpscRingBuff:-pRb=%p msgs_processed=%lu\n", ldr(), pRb, msgs_processed);
   return msgs_processed;
 }
 
