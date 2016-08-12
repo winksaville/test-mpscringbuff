@@ -7,10 +7,10 @@ DB=NDEBUG
 CC_FLAGS = -Wall -std=c11 -O2 -g -pthread -D${DB}
 all: test
 
-mpscringbuff.o : mpscringbuff.c
+mpscringbuff.o : mpscringbuff.c mpscringbuff.h dpf.h
 	${CC} ${CC_FLAGS} -c $< -o $@
 
-test.o : test.c
+test.o : test.c mpscringbuff.h dpf.h
 	${CC} ${CC_FLAGS} -c $< -o $@
 
 test : test.o mpscringbuff.o
